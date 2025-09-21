@@ -29,14 +29,19 @@ All layers were implemented using TensorFlow/Keras, with careful tuning of hyper
 
 
 ### 3. Model Training & Optimization
-- Trained the CNN using Adam optimizer and Sparse Categorical Crossentropy loss.
+- Trained CNNs using Adam optimizer and Sparse Categorical Crossentropy loss.
   
 - Implemented early stopping to halt training if validation accuracy stopped improving, avoiding unnecessary computation.
   
 - Evaluated model performance on the test set and iterated on architecture to boost accuracy.
 
+### 4.Synthesizing Results Across Models
+I designed three models with intentional differences in complexity, layer structure, and regularization. Rather than selecting a single model, I compared and integrated insights from all three to deliver a robust final solution.
+
+I used a soft voting ensemble (weighting predictions by model accuracy) to combine outputs from the three CNNs. This mitigated individual model biases (e.g., the deep model’s occasional misclassification of "9" as "4") and boosted overall reliability.
+
 # Results
-- Final CNN model achieved 99.014% accuracy on the MNIST test set.
+- Final result achieved 99.014% accuracy on the MNIST test set.
 - Key takeaway: CNNs excel at image tasks because their hierarchical layer structure efficiently captures spatial patterns.
 
 # Technologies Used
